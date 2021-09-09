@@ -1,0 +1,2 @@
+ros_yolo
+-DCATKIN_DEVEL_PREFIX=/home/cilab/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/cilab/catkin_ws/install -G Unix Makefiles

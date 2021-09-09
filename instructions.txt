@@ -1,0 +1,17 @@
+terminal1:
+cd catkin_ws/
+catkin_make
+roscore
+
+terminal2:
+cd catkin_ws/
+catkin_make
+roslaunch realsense2_camera rs_camera.launch
+
+terminal3:
+cd catkin_ws/
+catkin_make
+source ~/catkin_ws/devel/setup.bash
+sudo rmmod asus_nb_wmi
+conda activate py38
+rosrun ros_yolo final_yolo.py
