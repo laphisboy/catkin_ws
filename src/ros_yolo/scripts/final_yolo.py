@@ -142,15 +142,9 @@ def detect(img):
     print('total',time4-time1)
     out_img = im0[:, :, [2, 1, 0]]
     ros_image=out_img
-    print("before named window")
     cv2.namedWindow('YOLOV5')
-    print("before imshow")
     cv2.imshow('YOLOV5', out_img)
-    print("before waitKey")
-    print(out_img.shape)
     a  = cv2.waitKey(1)
-    print(f'pressed key is {a}')
-    print("before publish image")
 
     #### Create CompressedIamge ####
     publish_image(im0)
@@ -183,6 +177,7 @@ if __name__ == '__main__':
     weights = 'yolov5s.pt'
     imgsz = 640
     model = attempt_load(weights, map_location=device)  # load FP32 model
+
     imgsz = check_img_size(imgsz, s=model.stride.max())  # check img_size
     if half:
         model.half()  # to FP16
